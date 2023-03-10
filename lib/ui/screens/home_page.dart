@@ -15,22 +15,6 @@ class _HomePageState extends State<HomePage> {
     int selectedIndex = 0;
     Size size = MediaQuery.of(context).size;
 
-    List<Plant> _plantList = Plant.plantList;
-
-    //Plants category
-    List<String> _plantTypes = [
-      'Recommended',
-      'Indoor',
-      'Outdoor',
-      'Garden',
-      'Supplement',
-    ];
-
-    //Toggle Favorite button
-    bool toggleIsFavorated(bool isFavorited) {
-      return !isFavorited;
-    }
-
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
