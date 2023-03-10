@@ -74,23 +74,7 @@ class _ScanPageState extends State<ScanPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/images/code-scan.png',
-                      height: 100,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Tap to Scan',
-                      style: TextStyle(
-                        color: Constants.primaryColor.withOpacity(.80),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ],
+                  children: [],
                 ),
               ),
             ),
