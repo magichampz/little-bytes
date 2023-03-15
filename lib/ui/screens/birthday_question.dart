@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter_onboarding/ui/screens/heightweight_question.dart';
+import 'package:flutter_onboarding/ui/screens/name_question.dart';
 import 'package:intl/intl.dart';
 
 class BabyDOB extends StatefulWidget {
@@ -14,8 +16,8 @@ class _BabyDOBState extends State<BabyDOB> {
   TextEditingController editingController = TextEditingController();
   TextEditingController dateInput = TextEditingController();
 
-  String? name;
-  String? entry;
+  String? dob;
+  late String? formattedDate;
 
   @override
   Widget build(BuildContext context) {
@@ -81,16 +83,16 @@ class _BabyDOBState extends State<BabyDOB> {
                       lastDate: DateTime(2100));
 
                   if (pickedDate != null) {
-                    print(
-                        pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                    print(pickedDate); //pickedDate output format
                     String formattedDate =
                         DateFormat('yyyy-MM-dd').format(pickedDate);
                     print(
-                        formattedDate); //formatted date output using intl package =>  2021-03-16
+                        formattedDate); //formatted date output using intl package
                     setState(() {
                       dateInput.text =
                           formattedDate; //set output date to TextField value.
                     });
+                    dob = dateInput.text;
                   } else {}
                 },
               ),
@@ -104,28 +106,19 @@ class _BabyDOBState extends State<BabyDOB> {
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
-                    if (entry != null) {
-                      if (entry != '') {
-                        print("current value is $entry");
-                        setState(() {
-                          name = editingController.text;
-                        });
-                      }
+                    if (dateInput.text != null) {
+                      //print("current date is $dob");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HeightWeight()),
+                      );
                     }
                   },
                   child: Text('Next'),
                 ),
               ],
             ),
-            // Text( //debuging to check whether variable name is stored properly
-            //   "name is $name",
-            //   textAlign: TextAlign.center,
-            //   style: TextStyle(
-            //     color: Colors.black,
-            //     fontSize: 10,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
           ],
         ),
       ),
