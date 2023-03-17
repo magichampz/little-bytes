@@ -1,10 +1,10 @@
 class Plant {
   final int plantId;
-  final int price;
-  final String size;
+  final int time;
+  final String age;
   final double rating;
   final int humidity;
-  final String temperature;
+  final String summary;
   final String category;
   final String plantName;
   final String imageURL;
@@ -14,166 +14,168 @@ class Plant {
 
   Plant(
       {required this.plantId,
-        required this.price,
-        required this.category,
-        required this.plantName,
-        required this.size,
-        required this.rating,
-        required this.humidity,
-        required this.temperature,
-        required this.imageURL,
-        required this.isFavorated,
-        required this.decription,
-        required this.isSelected});
+      required this.time,
+      required this.category,
+      required this.plantName,
+      required this.age,
+      required this.rating,
+      required this.humidity,
+      required this.summary,
+      required this.imageURL,
+      required this.isFavorated,
+      required this.decription,
+      required this.isSelected});
 
   //List of Plants data
   static List<Plant> plantList = [
     Plant(
         plantId: 0,
-        price: 22,
-        category: 'Indoor',
-        plantName: 'Sanseviera',
-        size: 'Small',
+        time: 10,
+        category: 'Puree',
+        plantName: 'Carrot Puree',
+        age: '4-6 Months',
         rating: 4.5,
         humidity: 34,
-        temperature: '23 - 34',
-        imageURL: 'assets/images/plant-one.png',
+        summary: 'A delicious variation for your little one',
+        imageURL: 'assets/images/recipes/carrot_puree.jpg',
         isFavorated: true,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
-            'even the harshest weather condition.',
+            '1. Slice the carrots into half-moon shapes, 5 mm/¼ in thick. Steam or boil the carrots in a saucepan over a medium heat for 10–12 minutes until completely tender.\n'
+            '2. Purée the carrots with 3–4 tablespoons of boiled water in a food processor, or using a hand blender, until completely smooth.',
         isSelected: false),
     Plant(
         plantId: 1,
-        price: 11,
-        category: 'Outdoor',
-        plantName: 'Philodendron',
-        size: 'Medium',
+        time: 11,
+        category: 'Puree',
+        plantName: 'Broccoli Puree',
+        age: '4-6 Months',
         rating: 4.8,
         humidity: 56,
-        temperature: '19 - 22',
-        imageURL: 'assets/images/plant-two.png',
+        summary: 'It\'s Broc-O\'Clock!',
+        imageURL: 'assets/images/recipes/broccoli_puree.jpg',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
-            'even the harshest weather condition.',
+            'Steam or boil the broccoli in a saucepan over a medium heat for 8 minutes until very tender.'
+            'Adding 2–3 tablespoons boiled water, purée the broccoli in a food processor, or using a hand blender, until smooth.',
         isSelected: false),
     Plant(
         plantId: 2,
-        price: 18,
+        time: 18,
         category: 'Indoor',
         plantName: 'Beach Daisy',
-        size: 'Large',
+        age: 'Large',
         rating: 4.7,
         humidity: 34,
-        temperature: '22 - 25',
+        summary: '22 - 25',
         imageURL: 'assets/images/plant-three.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 3,
-        price: 30,
+        time: 30,
         category: 'Outdoor',
         plantName: 'Big Bluestem',
-        size: 'Small',
+        age: 'Small',
         rating: 4.5,
         humidity: 35,
-        temperature: '23 - 28',
+        summary: '23 - 28',
         imageURL: 'assets/images/plant-one.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 4,
-        price: 24,
+        time: 24,
         category: 'Recommended',
         plantName: 'Big Bluestem',
-        size: 'Large',
+        age: 'Large',
         rating: 4.1,
         humidity: 66,
-        temperature: '12 - 16',
+        summary: '12 - 16',
         imageURL: 'assets/images/plant-four.png',
         isFavorated: true,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 5,
-        price: 24,
+        time: 24,
         category: 'Outdoor',
         plantName: 'Meadow Sage',
-        size: 'Medium',
+        age: 'Medium',
         rating: 4.4,
         humidity: 36,
-        temperature: '15 - 18',
+        summary: '15 - 18',
         imageURL: 'assets/images/plant-five.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 6,
-        price: 19,
+        time: 19,
         category: 'Garden',
         plantName: 'Plumbago',
-        size: 'Small',
+        age: 'Small',
         rating: 4.2,
         humidity: 46,
-        temperature: '23 - 26',
+        summary: '23 - 26',
         imageURL: 'assets/images/plant-six.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 7,
-        price: 23,
+        time: 23,
         category: 'Garden',
         plantName: 'Tritonia',
-        size: 'Medium',
+        age: 'Medium',
         rating: 4.5,
         humidity: 34,
-        temperature: '21 - 24',
+        summary: '21 - 24',
         imageURL: 'assets/images/plant-seven.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
     Plant(
         plantId: 8,
-        price: 46,
+        time: 46,
         category: 'Recommended',
         plantName: 'Tritonia',
-        size: 'Medium',
+        age: 'Medium',
         rating: 4.7,
         humidity: 46,
-        temperature: '21 - 25',
+        summary: '21 - 25',
         imageURL: 'assets/images/plant-eight.png',
         isFavorated: false,
         decription:
-        'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
+            'This plant is one of the best plant. It grows in most of the regions in the world and can survive'
             'even the harshest weather condition.',
         isSelected: false),
   ];
 
   //Get the favorated items
-  static List<Plant> getFavoritedPlants(){
+  static List<Plant> getFavoritedPlants() {
     List<Plant> _travelList = Plant.plantList;
     return _travelList.where((element) => element.isFavorated == true).toList();
   }
 
   //Get the cart items
-  static List<Plant> addedToCartPlants(){
+  static List<Plant> addedToCartPlants() {
     List<Plant> _selectedPlants = Plant.plantList;
-    return _selectedPlants.where((element) => element.isSelected == true).toList();
+    return _selectedPlants
+        .where((element) => element.isSelected == true)
+        .toList();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/plants.dart';
 import 'package:flutter_onboarding/ui/screens/detail_page.dart';
@@ -33,10 +34,10 @@ class PlantWidget extends StatelessWidget {
           color: Constants.primaryColor.withOpacity(.1),
           borderRadius: BorderRadius.circular(10),
         ),
-        height: 80.0,
+        height: 80,
+        width: 150,
         padding: const EdgeInsets.only(left: 10, top: 10),
         margin: const EdgeInsets.only(bottom: 10, top: 10),
-        width: size.width,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,27 +48,38 @@ class PlantWidget extends StatelessWidget {
                 Container(
                   width: 60.0,
                   height: 60.0,
-                  decoration: BoxDecoration(
-                    color: Constants.primaryColor.withOpacity(.8),
-                    shape: BoxShape.circle,
-                  ),
+                  // decoration: BoxDecoration(
+                  //   color: Constants.primaryColor.withOpacity(0.4),
+                  //   shape: BoxShape.circle,
+                  // ),
                 ),
                 Positioned(
-                  bottom: 5,
+                  top: -7,
                   left: 0,
-                  right: 0,
-                  child: SizedBox(
-                    height: 80.0,
-                    child: Image.asset(plantList[index].imageURL),
+                  child: Container(
+                    width: 70,
+                    height: 70,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Constants.primaryColor,
+                        width: 3,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        plantList[index].imageURL,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
                 ),
                 Positioned(
-                  bottom: 5,
+                  bottom: 20,
                   left: 80,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(plantList[index].category),
                       Text(
                         plantList[index].plantName,
                         style: TextStyle(
@@ -76,22 +88,12 @@ class PlantWidget extends StatelessWidget {
                           color: Constants.blackColor,
                         ),
                       ),
+                      Text(plantList[index].summary)
                     ],
                   ),
                 ),
               ],
             ),
-            Container(
-              padding: const EdgeInsets.only(right: 10),
-              child: Text(
-                r'$' + plantList[index].price.toString(),
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
-                  color: Constants.primaryColor,
-                ),
-              ),
-            )
           ],
         ),
       ),
