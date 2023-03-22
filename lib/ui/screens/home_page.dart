@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding/models/plants.dart';
+import 'package:flutter_onboarding/models/recipes.dart';
 import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
