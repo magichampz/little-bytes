@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_onboarding/ui/screens/heightweight_question.dart';
-import 'package:flutter_onboarding/ui/screens/name_question.dart';
+import 'package:flutter_onboarding/ui/onboarding/heightweight_question.dart';
 import 'package:intl/intl.dart';
 
 class BabyDOB extends StatefulWidget {

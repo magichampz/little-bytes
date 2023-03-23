@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
-import 'package:flutter_onboarding/ui/screens/home_page.dart';
-import 'package:flutter_onboarding/ui/screens/name_question.dart';
-
-import 'root_page.dart';
-import 'screens/signin_page.dart';
+import '../root_page.dart';
+import 'name_question.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
