@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_onboarding/ui/screens/name_question.dart';
+import 'package:flutter_onboarding/ui/onboarding/name_question.dart';
 
-import 'ui/onboarding_screen.dart';
+import 'ui/onboarding/onboarding_screen.dart';
 
 void main() {
   runApp(MyApp());

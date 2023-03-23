@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import '../root_page.dart';
-import 'name_question.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);
@@ -11,145 +10,25 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController(initialPage: 0);
-  int currentIndex = 0;
+  final PageController pageController = PageController(initialPage: 0);
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 20, top: 20),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (_) => const RootPage()));
-              }, //to login screen. We will update later
-              child: const Text(
-                'Skip',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-      body: Stack(
-        alignment: Alignment.bottomCenter,
-        children: [
-          PageView(
-            //the different pages with the pictures and words
-            onPageChanged: (int page) {
-              setState(() {
-                currentIndex = page;
-              });
-            },
-            controller: _pageController,
-            children: [
-              createPage(
-                image: 'assets/images/plant-one.png',
-                title: "Welcome to LittleBytes",
-                description:
-                    "Taking care of your little one isn't easy. We're here for you",
-              ),
-            ],
-          ),
-          Positioned(
-            // the button on the bottom right for next page
-            bottom: 60,
-            right: 30,
-            child: Container(
-              child: IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const BabyName()),
-                    );
-                  },
-                  icon: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 24,
-                    color: Colors.white,
-                  )),
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Constants.primaryColor,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  //Extra Widgets
-
-  //Create the indicator decorations widget
-  Widget _indicator(bool isActive) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 300),
-      height: 10.0,
-      width: isActive ? 20 : 8,
-      margin: const EdgeInsets.only(right: 5.0),
-      decoration: BoxDecoration(
-        color: Constants.primaryColor,
-        borderRadius: BorderRadius.circular(5),
-      ),
-    );
-  }
-
-//Create the indicator list
-  List<Widget> _buildIndicator() {
-    List<Widget> indicators = [];
-
-    for (int i = 0; i < 3; i++) {
-      if (currentIndex == i) {
-        indicators.add(_indicator(true));
-      } else {
-        indicators.add(_indicator(false));
-      }
-    }
-
-    return indicators;
-  }
-}
-
-class createPage extends StatelessWidget {
-  final String image;
-  final String title;
-  final String description;
-
-  const createPage({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.description,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+    Container landingPage = Container(
       padding: const EdgeInsets.only(left: 50, right: 50, bottom: 80),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: 350,
-            child: Image.asset(image),
+            child: Image.asset('assets/images/plant-one.png'),
           ),
           const SizedBox(
             height: 20,
           ),
           Text(
-            title,
+            "Welcome to LittleBytes",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Constants.primaryColor,
@@ -160,10 +39,10 @@ class createPage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            description,
+          const Text(
+            "Taking care of your little one isn't easy. We're here for you",
             textAlign: TextAlign.center,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w400,
               color: Colors.grey,
@@ -171,6 +50,59 @@ class createPage extends StatelessWidget {
           ),
           const SizedBox(
             height: 20,
+          ),
+        ],
+      ),
+    );
+
+    Text namePage = const Text("namePage");
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        leading: currentPage == 0
+            ? TextButton(
+                child: const Text("Skip"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RootPage()),
+                  );
+                })
+            : TextButton(
+                child: const Text("Back"),
+                onPressed: () {
+                  pageController.previousPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.ease);
+                }),
+        actions: [
+          TextButton(
+              child: const Text("Next"),
+              onPressed: () {
+                pageController.nextPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.ease);
+              })
+        ],
+      ),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          PageView(
+            //the different pages with the pictures and words
+            onPageChanged: (int page) {
+              setState(() {
+                currentPage = page;
+              });
+            },
+            controller: pageController,
+            children: [
+              landingPage,
+              namePage,
+            ],
           ),
         ],
       ),
