@@ -45,16 +45,12 @@ class PlantWidget extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-                Container(
+                const SizedBox(
                   width: 60.0,
                   height: 60.0,
-                  // decoration: BoxDecoration(
-                  //   color: Constants.primaryColor.withOpacity(0.4),
-                  //   shape: BoxShape.circle,
-                  // ),
                 ),
                 Positioned(
-                  top: -7,
+                  top: -10,
                   left: 0,
                   child: Container(
                     width: 70,
