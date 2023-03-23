@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
+import 'package:flutter_onboarding/ui/screens/home_page.dart';
+import 'package:flutter_onboarding/ui/screens/name_question.dart';
 
+import 'root_page.dart';
 import 'screens/signin_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -26,8 +29,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.only(right: 20, top: 20),
             child: InkWell(
               onTap: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => const SignIn()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (_) => const RootPage()));
               }, //to login screen. We will update later
               child: const Text(
                 'Skip',
@@ -45,6 +48,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         alignment: Alignment.bottomCenter,
         children: [
           PageView(
+            //the different pages with the pictures and words
             onPageChanged: (int page) {
               setState(() {
                 currentIndex = page;
@@ -54,47 +58,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               createPage(
                 image: 'assets/images/plant-one.png',
-                title: Constants.titleOne,
-                description: Constants.descriptionOne,
-              ),
-              createPage(
-                image: 'assets/images/plant-two.png',
-                title: Constants.titleTwo,
-                description: Constants.descriptionTwo,
-              ),
-              createPage(
-                image: 'assets/images/plant-three.png',
-                title: Constants.titleThree,
-                description: Constants.descriptionThree,
+                title: "Welcome to LittleBytes",
+                description:
+                    "Taking care of your little one isn't easy. We're here for you",
               ),
             ],
           ),
           Positioned(
-            bottom: 80,
-            left: 30,
-            child: Row(
-              children: _buildIndicator(),
-            ),
-          ),
-          Positioned(
+            // the button on the bottom right for next page
             bottom: 60,
             right: 30,
             child: Container(
               child: IconButton(
                   onPressed: () {
-                    setState(() {
-                      if (currentIndex < 2) {
-                        currentIndex++;
-                        if (currentIndex < 3) {
-                          _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn);
-                        }
-                      } else {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (_) => const SignIn()));
-                      }
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const BabyName()),
+                    );
                   },
                   icon: const Icon(
                     Icons.arrow_forward_ios,
