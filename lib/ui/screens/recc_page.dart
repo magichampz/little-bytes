@@ -25,7 +25,7 @@ class _ReccPageState extends State<ReccPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +42,7 @@ class _ReccPageState extends State<ReccPage> {
                     'Here are some tasty recipes for your baby to try!',
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 18,
+                      fontSize: 14,
                     ),
                   )
                 ],

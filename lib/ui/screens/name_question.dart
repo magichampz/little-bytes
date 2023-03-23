@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_onboarding/ui/screens/birthday_question.dart';
+//import 'package:flutter_onboarding/ui/screens/birthday_question.dart';
+import 'package:flutter_onboarding/globals.dart' as globals;
+import 'birthday_question.dart';
 
 class BabyName extends StatefulWidget {
   const BabyName({super.key});
@@ -87,6 +89,7 @@ class _BabyNameState extends State<BabyName> {
                         setState(() {
                           name = editingController.text;
                         });
+                        globals.babyName = name;
                         Navigator.push(
                           context,
                           MaterialPageRoute(

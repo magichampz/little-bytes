@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_onboarding/ui/screens/birthday_question.dart';
 import 'package:numberpicker/numberpicker.dart';
+
+import '../root_page.dart';
 
 class HeightWeight extends StatefulWidget {
   const HeightWeight({super.key});
@@ -115,7 +114,6 @@ class _HeightWeightState extends State<HeightWeight> {
                 border: Border.all(color: Colors.black26),
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -125,29 +123,20 @@ class _HeightWeightState extends State<HeightWeight> {
                         MaterialStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
-                    print(" height: $height, weight: $weight");
                     setState(() {
                       height = _currentHeightValue;
                       weight = _currentWeightValue;
                     });
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => const BabyDOB()),
-                    // );
+                    print(" height: $height, weight: $weight");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const RootPage()),
+                    );
                   },
                   child: Text('Next'),
                 ),
               ],
             ),
-            // Text( //debuging to check whether variable name is stored properly
-            //   "name is $name",
-            //   textAlign: TextAlign.center,
-            //   style: TextStyle(
-            //     color: Colors.black,
-            //     fontSize: 10,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
           ],
         ),
       ),
