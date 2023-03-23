@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding/ui/onboarding/onboarding_birthday.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './onboarding_landing.dart';
 import './onboarding_name.dart';
 import '../root_page.dart';
+import 'onboarding_heightweight.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
@@ -29,6 +31,11 @@ class _OnboardingState extends State<Onboarding> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(key, value);
     nextPage();
+  }
+
+  getValue(String key) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(key);
   }
 
   @override
@@ -65,9 +72,15 @@ class _OnboardingState extends State<Onboarding> {
             },
             children: [
               const OnboardingLanding(),
-              OnboardingName(setName: (String name) {
-                setValueNextPage("name", name);
+              OnboardingName(
+                setName: (String name) {
+                  setValueNextPage("name", name);
+                },
+              ),
+              OnboardingBirthday(setBirthday: (String birthday) {
+                setValueNextPage("birthday", birthday);
               }),
+              const OnboardingHeightWeight()
             ],
           ),
         ],

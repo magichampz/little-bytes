@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'onboarding_style.dart';
 
 class OnboardingName extends StatefulWidget {
   const OnboardingName({super.key, required this.setName});
 
-  final Function(String name) setName;
+  final void Function(String name) setName;
 
   @override
   State<OnboardingName> createState() => _OnboardingNameState();
@@ -22,14 +23,10 @@ class _OnboardingNameState extends State<OnboardingName> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               "What's your baby's name?",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
+              style: OnboardingStyle.question,
             ),
             const SizedBox(
               height: 20,
@@ -55,10 +52,6 @@ class _OnboardingNameState extends State<OnboardingName> {
                   ? []
                   : [
                       TextButton(
-                        style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.blue),
-                        ),
                         onPressed: () {
                           if (name.isNotEmpty) {
                             widget.setName(name);
