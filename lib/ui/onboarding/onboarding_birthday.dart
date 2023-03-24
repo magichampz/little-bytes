@@ -24,8 +24,7 @@ class _OnboardingBirthdayState extends State<OnboardingBirthday> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text("What's your baby's age?",
-              textAlign: TextAlign.center, style: OnboardingStyle.question),
+          OnboardingStyle.makeQuestion("When is your baby's birthday?"),
           const SizedBox(
             height: 20,
           ),
@@ -56,19 +55,8 @@ class _OnboardingBirthdayState extends State<OnboardingBirthday> {
               },
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: date.isNotEmpty
-                ? [
-                    TextButton(
-                      onPressed: () {
-                        widget.setBirthday(date);
-                      },
-                      child: const Text('Next'),
-                    ),
-                  ]
-                : [],
-          ),
+          OnboardingStyle.makeNextRow(
+              date.isNotEmpty, () => widget.setBirthday(date))
         ],
       ),
     );

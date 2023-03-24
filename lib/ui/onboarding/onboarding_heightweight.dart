@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:numberpicker/numberpicker.dart';
-import '../root_page.dart';
+import 'onboarding_style.dart';
 
 class OnboardingHeightWeight extends StatefulWidget {
-  const OnboardingHeightWeight({super.key});
+  const OnboardingHeightWeight({super.key, required this.setHeightWeight});
+
+  final void Function(int, int) setHeightWeight;
 
   @override
   State<OnboardingHeightWeight> createState() => _OnboardingHeightWeightState();
 }
 
 class _OnboardingHeightWeightState extends State<OnboardingHeightWeight> {
-  int? height;
-  int? weight;
-  int _currentHeightValue = 10;
-  int _currentWeightValue = 10;
+  int height = 50;
+  int weight = 15;
 
   @override
   Widget build(BuildContext context) {
@@ -24,95 +23,30 @@ class _OnboardingHeightWeightState extends State<OnboardingHeightWeight> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              "Enter your baby's height and weight",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            OnboardingStyle.makeQuestion(
+                "What's your baby's height and weight?"),
             const SizedBox(
               height: 60,
             ),
-            const Text(
-              "Height (cm)",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            OnboardingStyle.makeHeightWeight("Height (cm)"),
             const SizedBox(
               height: 10,
             ),
-            NumberPicker(
-              value: _currentHeightValue,
-              minValue: 0,
-              maxValue: 100,
-              step: 2,
-              itemHeight: 100,
-              axis: Axis.horizontal,
-              onChanged: (value) => setState(() => _currentHeightValue = value),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black26),
-              ),
+            OnboardingStyle.makeNumberPicker(
+              value: height,
+              onChanged: (value) => setState(() => height = value),
             ),
-            SizedBox(height: 16),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              "Weight (kg)",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            const SizedBox(height: 36),
+            OnboardingStyle.makeHeightWeight("Weight (kg)"),
             const SizedBox(
               height: 10,
             ),
-            NumberPicker(
-              value: _currentWeightValue,
-              minValue: 0,
-              maxValue: 20,
-              step: 1,
-              itemHeight: 100,
-              axis: Axis.horizontal,
-              onChanged: (value) => setState(() => _currentWeightValue = value),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.black26),
-              ),
+            OnboardingStyle.makeNumberPicker(
+              value: weight,
+              onChanged: (value) => setState(() => weight = value),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                TextButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      height = _currentHeightValue;
-                      weight = _currentWeightValue;
-                    });
-                    print(" height: $height, weight: $weight");
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const RootPage()),
-                    );
-                  },
-                  child: Text('Next'),
-                ),
-              ],
-            ),
+            OnboardingStyle.makeNextRow(
+                true, () => widget.setHeightWeight(height, weight))
           ],
         ));
   }

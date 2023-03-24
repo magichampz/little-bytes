@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/ui/onboarding/onboarding_birthday.dart';
+import 'package:flutter_onboarding/ui/onboarding/onboarding_style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './onboarding_landing.dart';
 import './onboarding_name.dart';
@@ -27,15 +28,14 @@ class _OnboardingState extends State<Onboarding> {
         duration: const Duration(milliseconds: 500), curve: Curves.ease);
   }
 
-  setValueNextPage(String key, String value) async {
+  setString(String key, String value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(key, value);
-    nextPage();
   }
 
-  getValue(String key) async {
+  setInt(String key, int value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(key);
+    prefs.setInt(key, value);
   }
 
   @override
@@ -55,9 +55,8 @@ class _OnboardingState extends State<Onboarding> {
                   );
                 })
             : TextButton(onPressed: previousPage, child: const Text("Back")),
-        actions: currentPage == 0
-            ? [TextButton(onPressed: nextPage, child: const Text("Next"))]
-            : [],
+        actions:
+            currentPage == 0 ? [OnboardingStyle.makeNextButton(nextPage)] : [],
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -74,13 +73,22 @@ class _OnboardingState extends State<Onboarding> {
               const OnboardingLanding(),
               OnboardingName(
                 setName: (String name) {
-                  setValueNextPage("name", name);
+                  setString("name", name);
+                  nextPage();
                 },
               ),
               OnboardingBirthday(setBirthday: (String birthday) {
-                setValueNextPage("birthday", birthday);
+                setString("birthday", birthday);
+                nextPage();
               }),
-              const OnboardingHeightWeight()
+              OnboardingHeightWeight(setHeightWeight: (int height, int weight) {
+                setInt("height", height);
+                setInt("weight", weight);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RootPage()),
+                );
+              })
             ],
           ),
         ],

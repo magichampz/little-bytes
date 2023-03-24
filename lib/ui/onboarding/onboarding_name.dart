@@ -23,11 +23,7 @@ class _OnboardingNameState extends State<OnboardingName> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "What's your baby's name?",
-              textAlign: TextAlign.center,
-              style: OnboardingStyle.question,
-            ),
+            OnboardingStyle.makeQuestion("What's your baby's name?"),
             const SizedBox(
               height: 20,
             ),
@@ -46,21 +42,8 @@ class _OnboardingNameState extends State<OnboardingName> {
                 ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: name.isEmpty
-                  ? []
-                  : [
-                      TextButton(
-                        onPressed: () {
-                          if (name.isNotEmpty) {
-                            widget.setName(name);
-                          }
-                        },
-                        child: const Text("Next"),
-                      ),
-                    ],
-            ),
+            OnboardingStyle.makeNextRow(
+                name.isNotEmpty, () => widget.setName(name))
           ],
         ));
   }
