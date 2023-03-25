@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_onboarding/globals.dart' as globals;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,14 +11,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String? name = globals.babyName;
-  int selectedIndex = 0;
-  DateTime now = DateTime.now();
-  late DateTime lastDayOfMonth = DateTime(now.year, now.month + 1, 0);
+  String name = '';
+
   @override
   void initState() {
     super.initState();
-    // lastDayOfMonth = DateTime(now.year, now.month + 1, 0);
+    getString('name').then((value) => setState(() {
+          name = value;
+        }));
+  }
+
+  Future<String> getString(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(key) ?? '';
   }
 
   @override
