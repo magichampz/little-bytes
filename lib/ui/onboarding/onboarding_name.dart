@@ -42,8 +42,13 @@ class _OnboardingNameState extends State<OnboardingName> {
                 ),
               ),
             ),
-            OnboardingStyle.makeNextRow(
-                name.isNotEmpty, () => widget.setName(name))
+            SizedBox(
+                height: 30,
+                // color: Colors.red,
+                child: OnboardingStyle.makeNextRow(
+                    name.isNotEmpty, () => widget.setName(name))),
+            // OnboardingStyle.makeNextRow(
+            //     name.isNotEmpty, () => widget.setName(name))
           ],
         ));
   }

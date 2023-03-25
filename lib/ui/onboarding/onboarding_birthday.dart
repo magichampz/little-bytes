@@ -55,8 +55,11 @@ class _OnboardingBirthdayState extends State<OnboardingBirthday> {
               },
             ),
           ),
-          OnboardingStyle.makeNextRow(
-              date.isNotEmpty, () => widget.setBirthday(date))
+          SizedBox(
+              height: 30,
+              // color: Colors.red,
+              child: OnboardingStyle.makeNextRow(
+                  date.isNotEmpty, () => widget.setBirthday(date)))
         ],
       ),
     );
