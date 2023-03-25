@@ -12,6 +12,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String name = '';
+  int selectedIndex = 0;
+  DateTime now = DateTime.now();
+  late DateTime lastDayOfMonth = DateTime(now.year, now.month + 1, 0);
 
   @override
   void initState() {
