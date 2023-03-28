@@ -37,46 +37,40 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          Container(
-            // decoration: const BoxDecoration(
-            //   border:
-            //       Border(bottom: BorderSide(color: Colors.grey, width: 3.0)),
-            // ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                  // color: Colors.red,
-                  padding: const EdgeInsets.only(top: 20, right: 10),
-                  height: 100,
-                  width: 280,
-                  child: Text(
-                    "A look at $name's growth!",
-                    // "A look at Jack's growth!",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                // color: Colors.red,
+                padding: const EdgeInsets.only(top: 20, right: 10),
+                height: 100,
+                width: 250,
+                child: Text(
+                  "A look at $name's growth!",
+                  // "A look at Jack's growth!",
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-                Container(
-                  // padding: const EdgeInsets.only(right:20),
-                  width: 100,
-                  height: 100,
-                  child: ClipOval(
-                    child: Image.asset('assets/images/toddler-one.png'),
-                  ),
+              ),
+              SizedBox(
+                // padding: const EdgeInsets.only(right:20),
+                width: 100,
+                height: 100,
+                child: ClipOval(
+                  child: Image.asset('assets/images/toddler-one.png'),
                 ),
-                const SizedBox(
-                  height: 100,
-                  width: 20,
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 100,
+                width: 20,
+              ),
+            ],
           ),
           const SizedBox(
-            height: 3,
+            height: 8,
             width: 20,
           ),
           Row(
@@ -88,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                 //       Border(bottom: BorderSide(color: Colors.grey, width: 3.0)),
                 // ),
                 height: 3,
-                width: 400,
+                width: 350,
                 color: Colors.grey[300],
               ),
             ],
