@@ -11,15 +11,15 @@ class VaccinationPage extends StatefulWidget {
 class _VaccinationPageState extends State<VaccinationPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-          Positioned(
-            top: 50,
-            left: 20,
-            right: 20,
-            child: Row(
+      body: Container(
+        padding: new EdgeInsets.only(top: 50, left: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 30),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
@@ -41,14 +41,8 @@ class _VaccinationPageState extends State<VaccinationPage> {
                 ),
               ],
             ),
-          ),
-          Positioned(
-            top: 100,
-            left: 20,
-            right: 20,
-            child: Container(
-              width: size.width * .8,
-              height: size.height * .8,
+            Container(
+              height: 500,
               padding: const EdgeInsets.all(20),
               child: Stack(
                 children: [
@@ -70,19 +64,22 @@ class _VaccinationPageState extends State<VaccinationPage> {
                       ),
                     ],
                   ),
-                  ListView.builder(
-                    itemCount: VaccinationData.vaccinationList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return VaccinationCard(
-                        data: VaccinationData.vaccinationList[index],
-                      );
-                    },
-                  ),
+                  Container(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: ListView.builder(
+                      itemCount: VaccinationData.vaccinationList.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return VaccinationCard(
+                          data: VaccinationData.vaccinationList[index],
+                        );
+                      },
+                    ),
+                  )
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
