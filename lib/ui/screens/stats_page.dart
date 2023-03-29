@@ -19,31 +19,96 @@ class _StatsPageState extends State<StatsPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          Center(
+              child: Column(
             children: [
-              Icon(
-                Icons.height,
-                color: Constants.blackColor,
-                size: 30.0,
-              ),
-              Text(
-                "Jack's Height",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 27,
-                  color: Colors.blue[400],
+              Container(
+                width: 400,
+                height: 260,
+                padding: const EdgeInsets.all(4.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  color: Colors.grey[100],
+                  elevation: 10,
+                  clipBehavior: Clip.hardEdge,
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        const ListTile(
+                          leading: Icon(
+                            Icons.height,
+                            size: 60,
+                          ),
+                          title: Text("Jack's Height",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              )),
+                        ),
+                        SizedBox(
+                          height: 180,
+                          child: Image.asset('assets/images/height-graph.png'),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              )
+              ),
+              Container(
+                width: 400,
+                height: 260,
+                padding: const EdgeInsets.all(4.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  color: Colors.grey[100],
+                  elevation: 10,
+                  clipBehavior: Clip.hardEdge,
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        const ListTile(
+                          leading: Icon(
+                            Icons.height,
+                            size: 60,
+                          ),
+                          title: Text("Jack's Weight",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              )),
+                        ),
+                        SizedBox(
+                          height: 180,
+                          child: Image.asset('assets/images/height-graph.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
-          ),
-          SizedBox(
-            height: 250,
-            child: Image.asset('assets/images/height-graph.png'),
-          ),
+          )),
         ],
       ),
     ));
