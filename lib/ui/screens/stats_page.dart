@@ -41,7 +41,7 @@ class _StatsPageState extends State<StatsPage> {
             ],
           ),
           SizedBox(
-            height: 300,
+            height: 250,
             child: Image.asset('assets/images/height-graph.png'),
           ),
         ],
