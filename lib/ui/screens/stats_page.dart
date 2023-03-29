@@ -90,7 +90,7 @@ class _StatsPageState extends State<StatsPage> {
                       children: <Widget>[
                         const ListTile(
                           leading: Icon(
-                            Icons.height,
+                            Icons.monitor_weight,
                             size: 60,
                           ),
                           title: Text("Jack's Weight",
@@ -102,7 +102,49 @@ class _StatsPageState extends State<StatsPage> {
                         SizedBox(
                           height: 180,
                           child: Image.asset(
-                              'assets/images//graphs/height-graph.png'),
+                              'assets/images/graphs/weight-graph.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: 400,
+                height: 260,
+                padding: const EdgeInsets.all(4.0),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  color: Colors.grey[100],
+                  elevation: 10,
+                  clipBehavior: Clip.hardEdge,
+                  child: InkWell(
+                    splashColor: Colors.blue.withAlpha(30),
+                    onTap: () {
+                      debugPrint('Card tapped.');
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        const ListTile(
+                          leading: Icon(
+                            Icons.airline_seat_flat_angled,
+                            size: 60,
+                          ),
+                          title: Text("Jack's Sleep",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              )),
+                        ),
+                        SizedBox(
+                          height: 180,
+                          child: Image.asset(
+                              'assets/images/graphs/sleep-graph.png'),
                         ),
                       ],
                     ),
