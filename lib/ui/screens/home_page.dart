@@ -194,138 +194,139 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           Center(
-              child: Column(
-            children: [
-              Container(
-                width: 400,
-                height: 200,
-                padding: const EdgeInsets.all(4.0),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  color: Color.fromARGB(255, 165, 220, 244),
-                  elevation: 10,
-                  clipBehavior: Clip.hardEdge,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      debugPrint('Card tapped.');
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(
-                            Icons.cookie,
-                            size: 60,
-                          ),
-                          title: Text('Meals',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              )),
-                          subtitle: Text('Fed xx times'),
-                        ),
-                      ],
+            child: Column(
+              children: [
+                Container(
+                  width: 400,
+                  height: 200,
+                  padding: const EdgeInsets.all(4.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
                     ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 400,
-                height: 200,
-                padding: const EdgeInsets.all(4.0),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  color: Color.fromARGB(255, 165, 220, 244),
-                  elevation: 10,
-                  clipBehavior: Clip.hardEdge,
-                  child: InkWell(
+                    color: Color.fromARGB(255, 165, 220, 244),
+                    elevation: 10,
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
                       splashColor: Colors.blue.withAlpha(30),
                       onTap: () {
                         debugPrint('Card tapped.');
                       },
-                      child: Image.asset(
-                        'assets/images/toddler-one.png',
-                        fit: BoxFit.cover,
-                      )),
-                ),
-              ),
-              Container(
-                width: 400,
-                height: 200,
-                padding: const EdgeInsets.all(4.0),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  color: Color.fromARGB(255, 255, 179, 71),
-                  elevation: 10,
-                  clipBehavior: Clip.hardEdge,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      debugPrint('Card tapped.');
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
 
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(
-                            Icons.change_circle_rounded,
-                            size: 60,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.cookie,
+                              size: 60,
+                            ),
+                            title: Text('Meals',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                )),
+                            subtitle: Text('Fed xx times'),
                           ),
-                          title: Text('Diapers'),
-                          subtitle: Text('Changed xx times'),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Container(
-                width: 400,
-                height: 200,
-                padding: const EdgeInsets.all(4.0),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                Container(
+                  width: 400,
+                  height: 200,
+                  padding: const EdgeInsets.all(4.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    color: Color.fromARGB(255, 165, 220, 244),
+                    elevation: 10,
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
+                        splashColor: Colors.blue.withAlpha(30),
+                        onTap: () {
+                          debugPrint('Card tapped.');
+                        },
+                        child: Image.asset(
+                          'assets/images/toddler-one.png',
+                          fit: BoxFit.cover,
+                        )),
                   ),
-                  color: Color.fromARGB(255, 252, 242, 216),
-                  elevation: 10,
-                  clipBehavior: Clip.hardEdge,
-                  child: InkWell(
-                    splashColor: Colors.blue.withAlpha(30),
-                    onTap: () {
-                      debugPrint('Card tapped.');
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                ),
+                Container(
+                  width: 400,
+                  height: 200,
+                  padding: const EdgeInsets.all(4.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    color: Color.fromARGB(255, 255, 179, 71),
+                    elevation: 10,
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
+                      splashColor: Colors.blue.withAlpha(30),
+                      onTap: () {
+                        debugPrint('Card tapped.');
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
 
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(
-                            Icons.snooze_rounded,
-                            size: 60,
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.change_circle_rounded,
+                              size: 60,
+                            ),
+                            title: Text('Diapers'),
+                            subtitle: Text('Changed xx times'),
                           ),
-                          title: Text('Sleep'),
-                          subtitle: Text('Slept xx hours'),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          )),
+                Container(
+                  width: 400,
+                  height: 200,
+                  padding: const EdgeInsets.all(4.0),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    color: Color.fromARGB(255, 252, 242, 216),
+                    elevation: 10,
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
+                      splashColor: Colors.blue.withAlpha(30),
+                      onTap: () {
+                        debugPrint('Card tapped.');
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: <Widget>[
+                          const ListTile(
+                            leading: Icon(
+                              Icons.snooze_rounded,
+                              size: 60,
+                            ),
+                            title: Text('Sleep'),
+                            subtitle: Text('Slept xx hours'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     ));
