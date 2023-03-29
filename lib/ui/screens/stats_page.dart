@@ -16,8 +16,35 @@ class _StatsPageState extends State<StatsPage> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.height,
+                color: Constants.blackColor,
+                size: 30.0,
+              ),
+              Text(
+                "Jack's Height",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 27,
+                  color: Colors.blue[400],
+                ),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 300,
+            child: Image.asset('assets/images/graphs/height-graph.png'),
+          ),
+        ],
       ),
     ));
   }

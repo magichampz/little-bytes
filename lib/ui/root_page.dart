@@ -2,7 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/recipes.dart';
-import 'package:flutter_onboarding/ui/scan_page.dart';
+import 'package:flutter_onboarding/ui/log-pages/daily_log.dart';
 import 'package:flutter_onboarding/ui/screens/stats_page.dart';
 import 'package:flutter_onboarding/ui/screens/recc_page.dart';
 import 'package:flutter_onboarding/ui/screens/home_page.dart';
@@ -82,8 +82,7 @@ class _RootPageState extends State<RootPage> {
           Navigator.push(
               context,
               PageTransition(
-                  child: const ScanPage(),
-                  type: PageTransitionType.bottomToTop));
+                  child: DailyLog(), type: PageTransitionType.bottomToTop));
         },
         backgroundColor: Constants.primaryColor,
         child: const Icon(Icons.add, size: 35.0),

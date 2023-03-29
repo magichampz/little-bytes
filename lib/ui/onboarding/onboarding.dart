@@ -77,18 +77,22 @@ class _OnboardingState extends State<Onboarding> {
                   nextPage();
                 },
               ),
-              OnboardingBirthday(setBirthday: (String birthday) {
-                setString("birthday", birthday);
-                nextPage();
-              }),
-              OnboardingHeightWeight(setHeightWeight: (int height, int weight) {
-                setInt("height", height);
-                setInt("weight", weight);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const RootPage()),
-                );
-              })
+              OnboardingBirthday(
+                setBirthday: (String birthday) {
+                  setString("birthday", birthday);
+                  nextPage();
+                },
+              ),
+              OnboardingHeightWeight(
+                setHeightWeight: (int height, int weight) {
+                  setInt("height", height);
+                  setInt("weight", weight);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const RootPage()),
+                  );
+                },
+              )
             ],
           ),
         ],
