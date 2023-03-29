@@ -3,12 +3,11 @@ import 'package:intl/intl.dart';
 import 'package:flutter_onboarding/globals.dart' as globals;
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 import 'package:flutter_onboarding/models/plants.dart';
-import 'package:flutter_onboarding/models/diary.dart';
-import 'package:flutter_onboarding/ui/screens/detail_page.dart';
-import 'package:flutter_onboarding/ui/screens/widgets/plant_widget.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:flutter_onboarding/ui/screens/meal_page.dart';
+import 'package:flutter_onboarding/ui/screens/diaper_page.dart';
+import 'package:flutter_onboarding/ui/screens/sleep_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -221,6 +220,12 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.blue.withAlpha(30),
                         onTap: () {
                           debugPrint('Card tapped.');
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const MealPage(),
+                                type: PageTransitionType.bottomToTop)
+                          );
                         },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -288,6 +293,12 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.blue.withAlpha(30),
                         onTap: () {
                           debugPrint('Card tapped.');
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const DiaperPage(),
+                                type: PageTransitionType.bottomToTop)
+                          );
                         },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -296,7 +307,11 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             const ListTile(
                               leading: Icon(Icons.change_circle_rounded, size: 60,),
-                              title: Text('Diapers'),
+                              title: Text('Diapers', 
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                )),
                               subtitle: Text('Changed xx times'),
                             ),
                           ],
@@ -323,6 +338,12 @@ class _HomePageState extends State<HomePage> {
                         splashColor: Colors.blue.withAlpha(30),
                         onTap: () {
                           debugPrint('Card tapped.');
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                                child: const SleepPage(),
+                                type: PageTransitionType.bottomToTop)
+                          );
                         },
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -331,7 +352,11 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             const ListTile(
                               leading: Icon(Icons.snooze_rounded, size: 60,),
-                              title: Text('Sleep'),
+                              title: Text('Sleep',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                )),
                               subtitle: Text('Slept xx hours'),
                             ),
                           ],
