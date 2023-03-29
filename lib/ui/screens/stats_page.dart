@@ -59,7 +59,8 @@ class _StatsPageState extends State<StatsPage> {
                         ),
                         SizedBox(
                           height: 180,
-                          child: Image.asset('assets/images/height-graph.png'),
+                          child: Image.asset(
+                              'assets/images/graphs/height-graph.png'),
                         ),
                       ],
                     ),
@@ -100,7 +101,8 @@ class _StatsPageState extends State<StatsPage> {
                         ),
                         SizedBox(
                           height: 180,
-                          child: Image.asset('assets/images/height-graph.png'),
+                          child: Image.asset(
+                              'assets/images//graphs/height-graph.png'),
                         ),
                       ],
                     ),
