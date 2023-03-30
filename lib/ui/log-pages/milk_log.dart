@@ -45,11 +45,11 @@ class _MilkLogState extends State<MilkLog> {
               ),
             ),
           ),
-          SizedBox(
-            height: 30,
-            child: LogStyle.makeNextRow(
-                milk.isNotEmpty, () => widget.setMilk(milk)),
-          ),
+          // SizedBox(
+          //   height: 30,
+          //   child: LogStyle.makeNextRow(
+          //       milk.isNotEmpty, () => widget.setMilk(milk)),
+          // ),
         ],
       ),
     );

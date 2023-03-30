@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class LogStyle {
   static TextStyle question = const TextStyle(
-    color: Colors.blue,
-    fontSize: 20,
+    color: Color.fromRGBO(21, 101, 192, 1),
+    fontSize: 16,
     fontWeight: FontWeight.bold,
   );
 
@@ -16,7 +16,7 @@ class LogStyle {
   static Text makeQuestion(String text) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: TextAlign.left,
       style: question,
     );
   }
@@ -29,19 +29,25 @@ class LogStyle {
     );
   }
 
-  static TextButton makeNextButton(void Function() onPressed) {
+  static TextButton makeNextButton(
+      void Function() func1, void Function() func2, void Function() func3) {
     return TextButton(
-      onPressed: onPressed,
+      onPressed: () {
+        func1();
+        func2();
+        func3();
+      },
       child: const Text("Next"),
     );
   }
 
-  static Row makeNextRow(bool display, void Function() onPressed) {
+  static Row makeNextRow(bool display, void Function() func1,
+      void Function() func2, void Function() func3) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: display
           ? [
-              makeNextButton(onPressed),
+              makeNextButton(func1, func2, func3),
             ]
           : [],
     );

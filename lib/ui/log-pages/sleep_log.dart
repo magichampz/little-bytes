@@ -78,14 +78,14 @@ class _SleepLogState extends State<SleepLog> {
               ),
             ),
           ),
-          SizedBox(
-            height: 30,
-            // color: Colors.red,
-            child: LogStyle.makeNextRow(
-              sleep.isNotEmpty,
-              () => widget.setSleep(sleep),
-            ),
-          )
+          // SizedBox(
+          //   height: 30,
+          //   // color: Colors.red,
+          //   child: LogStyle.makeNextRow(
+          //     sleep.isNotEmpty,
+          //     () => widget.setSleep(sleep),
+          //   ),
+          // )
         ],
       ),
     );

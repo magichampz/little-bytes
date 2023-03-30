@@ -30,6 +30,7 @@ class _OnboardingNameState extends State<OnboardingName> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextField(
+                autocorrect: false,
                 onChanged: (text) {
                   setState(() {
                     name = text;
