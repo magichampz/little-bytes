@@ -84,12 +84,12 @@ class _RootPageState extends State<RootPage> {
           Navigator.push(
               context,
               PageTransition(
-                  child: MilestoneLog(), //temporary only
-                  // child: SingleLog(
-                  //   setDay: (String day) {},
-                  //   setSleep: (String sleep) {},
-                  //   setMilk: (String milk) {},
-                  // ),
+                  // child: MilestoneLog(), //temporary only
+                  child: SingleLog(
+                    setDay: (String day) {},
+                    setSleep: (String sleep) {},
+                    setMilk: (String milk) {},
+                  ),
                   type: PageTransitionType.bottomToTop));
         },
         backgroundColor: Constants.primaryColor,
