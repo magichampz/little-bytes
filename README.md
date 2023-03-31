@@ -14,4 +14,9 @@ A demonstration of using the app can be found in the submission video below.
 ### Credits
 Littlebytes was developed as a submission to the Google Solutions Challenge 2023. The full video submission for the project is embedded below:
 
+
+https://user-images.githubusercontent.com/91732309/229234173-99755567-da5e-4a8f-8042-cb332f678bb4.mp4
+
+
+
 Members of the team: Amos Koh [@racketmaestro], Aveek Goswami [@magichampz], Lee Jian Rong [@leejianrong], Tang Bo Xuan [@tangboxuan]
