@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/recipes.dart';
+import 'package:flutter_onboarding/ui/expandable_fab.dart';
 import 'package:flutter_onboarding/ui/log-pages/daily_log.dart';
 import 'package:flutter_onboarding/ui/log-pages/milestone_page.dart';
 import 'package:flutter_onboarding/ui/log-pages/single_log.dart';
@@ -79,22 +80,54 @@ class _RootPageState extends State<RootPage> {
         index: _bottomNavIndex,
         children: _widgetOptions(),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context,
-              PageTransition(
-                  // child: MilestoneLog(), //temporary only
-                  child: SingleLog(
-                    setDay: (String day) {},
-                    setSleep: (String sleep) {},
-                    setMilk: (String milk) {},
-                  ),
-                  type: PageTransitionType.bottomToTop));
-        },
-        backgroundColor: Constants.primaryColor,
-        child: const Icon(Icons.add, size: 35.0),
+      floatingActionButton: ExpandableFab(
+        distance: 112.0,
+        children: [
+          ActionButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      // child: MilestoneLog(), //temporary only
+                      child: SingleLog(
+                        setDay: (String day) {},
+                        setSleep: (String sleep) {},
+                        setMilk: (String milk) {},
+                      ),
+                      type: PageTransitionType.bottomToTop));
+            },
+            text: "Record today's log",
+            // icon: const Icon(Icons.format_size),
+          ),
+          ActionButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageTransition(
+                      child: const MilestoneLog(), //temporary only
+                      type: PageTransitionType.bottomToTop));
+            },
+            text: "Add a Milestone",
+            // icon: const Icon(Icons.insert_photo),
+          ),
+        ],
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //         context,
+      //         PageTransition(
+      //             // child: MilestoneLog(), //temporary only
+      //             child: SingleLog(
+      //               setDay: (String day) {},
+      //               setSleep: (String sleep) {},
+      //               setMilk: (String milk) {},
+      //             ),
+      //             type: PageTransitionType.bottomToTop));
+      //   },
+      //   backgroundColor: Constants.primaryColor,
+      //   child: const Icon(Icons.add, size: 35.0),
+      // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
           splashColor: Constants.primaryColor,

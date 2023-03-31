@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_onboarding/ui/expandable_fab.dart';
 import 'ui/onboarding/onboarding.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Onboarding Screen',
       home: Onboarding(),
+      // home: ExampleExpandableFab(),
       debugShowCheckedModeBanner: false,
     );
   }
