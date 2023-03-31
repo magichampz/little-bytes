@@ -13,7 +13,7 @@ class OnboardingLanding extends StatelessWidget {
         children: [
           SizedBox(
             height: 350,
-            child: Image.asset('assets/images/plant-one.png'),
+            child: Image.asset('assets/images/front-page-logo.png'),
           ),
           const SizedBox(
             height: 20,

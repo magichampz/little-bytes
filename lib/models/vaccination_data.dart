@@ -7,7 +7,7 @@ class VaccinationData {
   VaccinationData({required this.name, required this.status});
 
   static List<VaccinationData> vaccinationList = [
-    VaccinationData(name: 'SARS stuff', status: 'Taken'),
-    VaccinationData(name: 'another one', status: 'due next year')
+    VaccinationData(name: 'MMR Vaccine', status: 'Taken'),
+    VaccinationData(name: 'Flu Vaccine', status: 'due next year')
   ];
 }

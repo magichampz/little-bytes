@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_onboarding/constants.dart';
 import 'package:flutter_onboarding/models/recipes.dart';
 import 'package:flutter_onboarding/ui/log-pages/daily_log.dart';
+import 'package:flutter_onboarding/ui/log-pages/log_options_page.dart';
 import 'package:flutter_onboarding/ui/log-pages/milestone_page.dart';
 import 'package:flutter_onboarding/ui/log-pages/single_log.dart';
 import 'package:flutter_onboarding/ui/screens/stats_page.dart';
@@ -84,12 +85,13 @@ class _RootPageState extends State<RootPage> {
           Navigator.push(
               context,
               PageTransition(
+                  child: LogOptions(),
                   // child: MilestoneLog(), //temporary only
-                  child: SingleLog(
-                    setDay: (String day) {},
-                    setSleep: (String sleep) {},
-                    setMilk: (String milk) {},
-                  ),
+                  // child: SingleLog(
+                  //   setDay: (String day) {},
+                  //   setSleep: (String sleep) {},
+                  //   setMilk: (String milk) {},
+                  // ),
                   type: PageTransitionType.bottomToTop));
         },
         backgroundColor: Constants.primaryColor,

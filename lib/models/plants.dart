@@ -40,8 +40,8 @@ class Plant {
         imageURL: 'assets/images/recipes/carrot_puree.jpg',
         isFavorated: true,
         decription:
-            '1. Slice the carrots into half-moon shapes, 5 mm/¼ in thick. Steam or boil the carrots in a saucepan over a medium heat for 10–12 minutes until completely tender.\n\n'
-            '2. Purée the carrots with 3–4 tablespoons of boiled water in a food processor, or using a hand blender, until completely smooth.',
+            '1. Cut the carrots into half-moon shapes, 5 mm/¼ in thick. Steam the carrots using a saucepan over a medium heat for 11–13 minutes until tender.\n\n'
+            '2. Purée the carrots with 3 tablespoons of boiled water in a food processor until completely smooth.',
         isSelected: false),
     Plant(
         plantId: 1,
@@ -55,8 +55,8 @@ class Plant {
         imageURL: 'assets/images/recipes/broccoli_puree.jpg',
         isFavorated: false,
         decription:
-            '1. Steam or boil the broccoli in a saucepan over a medium heat for 8 minutes until very tender.\n\n'
-            '2. Adding 2–3 tablespoons boiled water, purée the broccoli in a food processor, or using a hand blender, until smooth.',
+            '1. Using a saucepan, steam or boil the broccoli over medium heat for  minutes until very tender.\n\n'
+            '2. Add 2–3 tablespoons boiled water and purée the broccoli in a food processor until smooth.',
         isSelected: false),
     Plant(
         plantId: 2,
