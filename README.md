@@ -12,4 +12,4 @@ To run the app using VS Code, clone the repository into your local directory and
 ### Credits
 Littlebytes was developed as a submission to the Google Solutions Challenge 2023. The Demo video of the project can be found at (insert link).
 
-Members of the team: Amos Koh (@racketmaestro), Aveek Goswami (@magichampz), Lee Jian Rong (@leejianrong), Tang Bo Xuan (@tangboxuan)
+Members of the team: Amos Koh [@racketmaestro], Aveek Goswami [@magichampz], Lee Jian Rong [@leejianrong], Tang Bo Xuan [@tangboxuan]
