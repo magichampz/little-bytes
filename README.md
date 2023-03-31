@@ -1,16 +1,15 @@
 # littlebytes
 
-A new Flutter project.
+## Introduction
+Littlebytes is one stop mobile application designed to support new parents in caring for their baby. Littlebytes' goal is to alleviate the stress from parenting and provide personalised guidance on how to care for their baby.
 
-## Getting Started
+## Functions
+Littlebytes allows users to input and keep track of important data about their child such as their body metrics, eating habits, sleep schedules and other daily habits. It provides personalised insights on the baby's development such as meal and healthcare recommendations. Trends regarding your baby's body metrics, sleeping patterns and more are displayed in the Statistics page. 
 
-This project is a starting point for a Flutter application.
+## Running and using the app
+To run the app using VS Code, clone the repository into your local directory and open the main.dart file. Ensure you have a suitable simulator open, this app is optimised for iOS and Android devices. Click the "Run and Debug" button and the app will run on the simulator, opening to the onboarding screen. After all required details are entered, you will be redirected to the home page, where all the other pages and functions can be viewed.
 
-A few resources to get you started if this is your first Flutter project:
+## Credits
+Littlebytes was developed as a submission to the Google Solutions Challenge 2023. The Demo video of the project can be found at (insert link).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Members of the team: Amos Koh (@racketmaestro), Aveek Goswami (@magichampz), Lee Jian Rong (@leejianrong), Tang Bo Xuan (@tangboxuan)
